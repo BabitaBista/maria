@@ -21,7 +21,7 @@ h1, h2, h3 {
 }
 
 h1, h2 {
-  font-size: 48px;
+  /* font-size: 48px; */
 }
 
 .top-bar {
@@ -54,8 +54,15 @@ h1, h2 {
 /* Hero Section */
 .hero_image {
     width: 100%;
+    object-fit:cover;
+    /* width: 1440px; */
+    /* height: 743px; */
+    top: 148px;
+    border: 4px 0px 0px 0px;
 }
-.hero-section {
+
+
+.hero_section {
     position: relative;
     text-align: center;
   }
@@ -65,18 +72,30 @@ h1, h2 {
     background-image: url('img/about_us.png');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     color: white;
-    top: -250px;
+    margin-top: -250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .overlay_text{
+.overlay_text{
     /* padding-top: 200px; */
     width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
   }
+
+.overlay-text .highlight {
+    color: #F5CA34;
+    font-weight: bold;
+}
 
 .student_metrics{
   padding:80px 104px;
+  justify-content: space-around
 }
 .student_metrics img{
   height:56px;
@@ -102,11 +121,13 @@ h1, h2 {
   color:#D85656;
   text-transform: uppercase;
   font-size: 16px;
+  text-align: center;
 }
 
 .section-heading {
   font-size: 48px;
   margin: 5px 0;
+  text-align: center;
 }
 .gallery .card {
   margin: 10px;
@@ -136,10 +157,7 @@ h1, h2 {
   padding-bottom: 40px;
   /* padding: 40px 104px 0px 104px;  */
 }
-/* .content-section p {
-  font-family: Albert Sans;
-  font-size: 20px;
-} */
+
 /* Icon Styling */
 .icon {
   width: 48px;
@@ -225,56 +243,53 @@ h1, h2 {
 
 /* Conatct Us + Footer */
 
-.contact_us {
+.contact-footer {
   position: relative;
   background-image: url('img/footer-image.png');
+  background-size: cover;
+  /* background-color: #F6CF46; */
 
 }
 
 .contact-wrapper {
   padding-top: 171px;
 }
+
 .contact-text-section {
-  text-align: left;
-}
-.contact-text {
-  padding-top:76px;
-  padding-left: 104px;
-  padding-top: 152px;
-  padding-right: 27px;
+  padding:76px 27px 0px 104px;
   color: #3C8013;
   font-size: 40px;
   font-weight: 600;
   line-height: 48px;
   letter-spacing: -0.011em;
-  text-align: left !important;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-
-
+  text-align: left;
 }
 
+.contact-text-section p{
+  font-size: 40px;
+
+}
 .contact-btn {
-padding: 14px 28px 14px 28px;
-gap: 10px;
-border-radius: 4px 0px 0px 0px;
-opacity: 0px;
+  padding: 14px 10px 14px 10px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  /* margin: auto; */
 
 }
 .contact-image{
   width: 521px;
-height: 372px;
-top: 5157px;
-left: 826px;
-gap: 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-padding-right: 95px;
+  height: 372px;
+  top: 5157px;
+  left: 826px;
+  gap: 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  padding-right: 95px;
 }
 
 .contact-btn {
   width: 100%; /* Full width on smaller screens */
-  max-width: 150px; /* Limit the width on larger screens */
+  max-width: 160px; /* Limit the width on larger screens */
 }
 
 .contact-image img {
@@ -282,12 +297,39 @@ padding-right: 95px;
   height: auto;
 }
 
-
 /* Footer */
 
-.footer {
-  background-color: #f7d155;
+.footer-line{
+  border: 2px solid #FFF0F0;
 }
+.footer {
+  padding-left: 104px;
+  padding-right: 27px;
+  justify-content: space-between;
+  font-size: 16px;
+ }
+
+ .footer-heading{
+  font-family: Albert Sans;
+  font-size: 20px;
+  font-weight: 600;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.011em;
+  text-align: left;
+ }
+
+ .footer-content {
+  font-family: Albert Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+ }
   /* .hero-section h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -315,3 +357,138 @@ padding-right: 95px;
     margin-bottom: -5px;
     border-radius: 10px;
       } */
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .student_metrics {
+      padding: 40px 50px;
+  }
+  .student_metrics h1 {
+      font-size: 48px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about_background {
+      margin-top: -250px;
+      height: 72vh;
+  }
+
+  .overlay_text {
+      /* padding-top: 150px; */
+      width: 60%;
+  }
+  .section-heading{
+      font-size: 36px;
+  }
+
+  .student_metrics {
+      padding: 60px 20px;
+      justify-content: center;  /* Center items for medium screens */
+  }
+
+  .student_metrics h1 {
+      font-size: 42px;
+  }
+
+  .student_metrics .metrics {
+      margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_background {
+      margin-top: -150px;
+  }
+
+  .overlay_text {
+      /* padding-top: 120px; */
+      width: 70%;
+  }
+
+  .student_metrics {
+      flex-direction: column;  /* Stack items vertically on small screens */
+      padding: 30px 20px;
+  }
+
+  .student_metrics h1 {
+      font-size: 36px;
+  }
+
+  .student_metrics .metrics {
+      margin-bottom: 20px;
+  }
+
+  .student_metrics img {
+      height: 48px;
+      width: 48px;
+  }
+
+  .student_metrics .stat_name {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about_background {
+      margin-top: -100px;
+      height: 100vh;
+  }
+
+  .overlay_text {
+      width: 80%;
+  }
+
+  .overlay_text h1 {
+    font-size: 28px;
+}
+
+.overlay_text p {
+    font-size: 14px;
+}
+
+  .student_metrics {
+      padding: 20px 10px;
+  }
+
+  .student_metrics h1 {
+      font-size: 32px;
+  }
+
+  .student_metrics .metrics {
+      margin-bottom: 15px;
+  }
+
+  .student_metrics img {
+      height: 40px;
+      width: 40px;
+  }
+
+  .student_metrics .stat_name {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .student_metrics {
+      padding: 15px 5px;
+  }
+
+  .student_metrics h1 {
+      font-size: 28px;
+  }
+
+  .student_metrics .metrics {
+      margin-bottom: 10px;
+  }
+
+  .student_metrics img {
+      height: 36px;
+      width: 36px;
+  }
+
+  .student_metrics .stat_name {
+      font-size: 14px;
+  }
+}
