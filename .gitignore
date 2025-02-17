@@ -1,0 +1,41 @@
+# Ignore Node.js dependencies (if using npm/yarn for Bootstrap)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignore compiled CSS (if using SASS/SCSS)
+*.css.map
+*.sass-cache/
+
+# Ignore build tools like Webpack, Parcel, or Gulp output (if applicable)
+dist/
+build/
+
+# Ignore OS-specific files
+.DS_Store
+*.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.log
+*.tmp
+*.bak
+
+# Ignore cache files
+.cache/
+npm-debug.log*
+
+# Ignore VS Code and JetBrains IDE files
+.vscode/
+.idea/
+
+# Ignore Bootstrap and other third-party libraries if using a CDN
+bootstrap/
+vendor/
+
+# Ignore generated files (if using any preprocessor or build system)
+*.min.js
+*.min.css
+
+# Ignore personal environment files (if applicable)
+.env
