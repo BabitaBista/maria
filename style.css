@@ -1,53 +1,74 @@
+/* General Reset */
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Albert Sans;
-    font-size: 14px;
-    /* color: black; */
+    font-family: "Albert Sans", sans-serif;
     background-color: #ffffff;
-
 }
 
 a, p {
-  font-family: Albert Sans;
+    font-family: "Albert Sans", sans-serif;
 }
+
 p {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 h1, h2, h3 {
-  font-family: DynaPuff;
+    font-family: "DynaPuff", cursive;
 }
 
-h1, h2 {
-  /* font-size: 48px; */
+html {
+    scroll-behavior: smooth;
 }
 
-.top-bar {
-    background-color: #D856561A;
-    color: #D856561A;
-    height: 46px;
-    /* padding: 10px; */
-}
 
-.top-bar .name {
-    color: black;
-}
-.top-bar .text {
-    color: red;
-}
-
+/* Logo Styling */
 .logo {
-    padding: 10px;
-}
-.header .logo img {
-    height: 82px;
-    width: 83px;
+    height: 70px;
+    width: auto;
 }
 
-.nav .nav-link{
+/* Navbar */
+.navbar {
+    padding: 10px 0;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
     color: black !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Contact Us Button */
+.navbar-nav .btn-danger {
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Mobile Menu Button */
+.navbar-toggler {
+    border: none;
+}
+
+/* Mobile Navbar */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-nav .btn-danger {
+        display: block;
+        width: 100%;
+    }
 }
 
 
@@ -55,8 +76,6 @@ h1, h2 {
 .hero_image {
     width: 100%;
     object-fit:cover;
-    /* width: 1440px; */
-    /* height: 743px; */
     top: 148px;
     border: 4px 0px 0px 0px;
 }
@@ -81,7 +100,6 @@ h1, h2 {
   }
 
 .overlay_text{
-    /* padding-top: 200px; */
     width: 50%;
     margin: 0 auto;
     justify-content: center;
@@ -92,98 +110,179 @@ h1, h2 {
     color: #F5CA34;
     font-weight: bold;
 }
-
-.student_metrics{
-  padding:80px 104px;
-  justify-content: space-around
-}
-.student_metrics img{
-  height:56px;
-  width:56px;
-}
-.student_metrics h1{
-  font-family: 'DynaPuff';
-  font-size: 56px;
-  align-items: center;
-}
-.student_metrics .stat_name {
-  font-size: 20px;
+.section-heading-about-us{
+  font-size: 48px;
 }
 
-/* Gallery */
-.gallery {
-  position: relative;
-  /* background-image: url('img/gallery-vector.png'); */
-  background-color: #FCEFEF;
-  /* height: 646px; */
+
+.section-heading {
+  font-size: 40px;
+  margin: 15px 0;
+  text-align: center;
 }
+
 .section-title {
-  color:#D85656;
+  /* color:#D85656; */
   text-transform: uppercase;
   font-size: 16px;
   text-align: center;
 }
 
-.section-heading {
-  font-size: 48px;
-  margin: 5px 0;
-  text-align: center;
-}
-.gallery .card {
-  margin: 10px;
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    /* Remove background image and margin-top on small screens */
+    .about_background {
+        background-image: none !important;
+        background-color: #9f49d0; /* Optional: Keep white background */
+        height:auto;
+        color: white;
+        padding: 50px 35px;
+        margin-top: 0;
+
+    }
+
+    .section-heading, .section-heading-about-us {
+      font-size: 36px;
+      margin: 5px 0;
+      text-align: center;
+    }
+    .overlay_text {
+        width: 90%;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 30px;
+    }
+    .section-text {
+        font-size: 16px;
+    }
 }
 
+@media (max-width: 576px) {
+    .hero_image {
+        height: 300px;
+    }
+    .overlay_text {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .about_background {
+        padding: 30px 15px;
+        height:auto;
+
+    }
+    .section-title {
+        font-size: 14px;
+    }
+
+    .section-heading, .section-heading-about-us {
+      font-size: 32px;
+    }
+
+    .section-text {
+        font-size: 15px;
+    }
+}
+
+/* Student Metrics */
+.student_metrics {
+  padding: 80px 104px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;  /* Adjust for large screens */
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+/*
+.metrics {
+  flex: 1 1 200px;
+  max-width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+*/
+.metrics:hover {
+  transform: translateY(-10px);
+}
+
+.student_metrics img {
+  height: 64px;
+  width: 64px;
+}
+
+.student_metrics h1 {
+  font-size: 56px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.student_metrics .stat_name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Gallery */
+.gallery {
+  position: relative;
+  background-color: #FCEFEF;
+}
+
+/* Card styling */
+.gallery .card {
+  margin: 10px;
+  border: none; /* Remove border for a cleaner look */
+}
+
+/* Image styling */
 .card-img-top {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  gap: 0px;
+  height: 300px; /* Set a fixed height for the images */
+  object-fit: cover; /* Maintain aspect ratio while covering the entire container */
   border-radius: 4px 0px 0px 0px;
 }
 
+/* Responsive behavior for small screens */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 250px; /* Further reduce height for very small screens */
+  }
+}
 
-/* Why Choose */
 
+/* Why Choose Section */
 .why-choose {
-  /* position: relative; */
-  /* background-image: url('img/vector-2.png'); */
   background-color: #23a484;
+}
 
+.section-subtitle {
+  color: #C5F534;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-.wrapper {
-  padding: 108px 80px 96px 80px;
-}
-.title {
-  padding-bottom: 40px;
-  /* padding: 40px 104px 0px 104px;  */
-}
+
 
 /* Icon Styling */
-.icon {
-  width: 48px;
-  height: 48px;
-} 
-
-/* Responsive Text Color */
-.text-white p, .text-white h1 {
-  color: white;
+.feature {
+  padding: 15px;
 }
 
-/* Responsive Adjustment */
-@media (max-width: 768px) {
-  .why-choose .row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .icon {
-    margin-right: 0; /* Center icons on smaller screens */
-  }
+.feature img.icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 
-/* Testimonial */
 
+/* Testimonial Section */
 .carousel-item {
   text-align: center;
   padding: 40px;
@@ -227,6 +326,7 @@ h1, h2 {
   font-size: 14px;
   color: #777;
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: #9F49D0;
@@ -241,6 +341,7 @@ h1, h2 {
   z-index: 1; /* Ensure arrows are above the carousel items */
 }
 
+
 /* Conatct Us + Footer */
 
 .contact-footer {
@@ -252,11 +353,11 @@ h1, h2 {
 }
 
 .contact-wrapper {
-  padding-top: 171px;
+  padding-top: 200px;
 }
 
 .contact-text-section {
-  padding:76px 27px 0px 104px;
+  padding:76px 27px 27px 104px;
   color: #3C8013;
   font-size: 40px;
   font-weight: 600;
@@ -267,7 +368,6 @@ h1, h2 {
 
 .contact-text-section p{
   font-size: 40px;
-
 }
 .contact-btn {
   padding: 14px 10px 14px 10px;
@@ -277,7 +377,7 @@ h1, h2 {
 
 }
 .contact-image{
-  width: 521px;
+  width: 550px;
   height: 372px;
   top: 5157px;
   left: 826px;
@@ -299,37 +399,29 @@ h1, h2 {
 
 /* Footer */
 
-.footer-line{
+.footer-line {
   border: 2px solid #FFF0F0;
+  margin: 20px 0;
 }
-.footer {
-  padding-left: 104px;
-  padding-right: 27px;
-  justify-content: space-between;
-  font-size: 16px;
- }
 
- .footer-heading{
-  font-family: Albert Sans;
+.footer {
+  font-size: 16px;
+}
+
+/* Adjust padding for responsiveness */
+.footer-heading {
+  font-family: "Albert Sans", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  font-weight: 600;
-  line-height: 28px;
-  letter-spacing: -0.011em;
-  text-align: left;
- }
+}
 
- .footer-content {
-  font-family: Albert Sans;
+.footer-content {
+  font-family: "Albert Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: -0.011em;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+}
 
- }
   /* .hero-section h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -358,17 +450,7 @@ h1, h2 {
     border-radius: 10px;
       } */
 
-
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .student_metrics {
-      padding: 40px 50px;
-  }
-  .student_metrics h1 {
-      font-size: 48px;
-  }
-}
-
+/*
 @media (max-width: 992px) {
   .about_background {
       margin-top: -250px;
@@ -376,26 +458,9 @@ h1, h2 {
   }
 
   .overlay_text {
-      /* padding-top: 150px; */
       width: 60%;
   }
-  .section-heading{
-      font-size: 36px;
-  }
 
-  .student_metrics {
-      padding: 60px 20px;
-      justify-content: center;  /* Center items for medium screens */
-  }
-
-  .student_metrics h1 {
-      font-size: 42px;
-  }
-
-  .student_metrics .metrics {
-      margin-bottom: 30px;
-  }
-}
 
 @media (max-width: 768px) {
   .about_background {
@@ -403,92 +468,300 @@ h1, h2 {
   }
 
   .overlay_text {
-      /* padding-top: 120px; */
       width: 70%;
   }
 
+    @media (max-width: 576px) {
+      .about_background {
+          margin-top: -100px;
+          height: 100vh;
+      }
+
+      .overlay_text {
+          width: 80%;
+      }
+
+      .overlay_text h1 {
+        font-size: 28px;
+    }
+
+    .overlay_text p {
+        font-size: 14px;
+    }
+*/
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
   .student_metrics {
-      flex-direction: column;  /* Stack items vertically on small screens */
-      padding: 30px 20px;
+    padding: 40px 50px;
+    justify-content: center;
   }
 
   .student_metrics h1 {
-      font-size: 36px;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 992px) {
+  .student_metrics {
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    justify-content: center;
   }
 
-  .student_metrics .metrics {
-      margin-bottom: 20px;
+  .metrics {
+    flex: 1 1 250px;
+    max-width: 250px;
+  }
+
+  .student_metrics h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .student_metrics {
+    flex-direction: column; /* Stack vertically */
+    padding: 30px 20px;
+  }
+
+  .metrics {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .student_metrics h1 {
+    font-size: 36px;
   }
 
   .student_metrics img {
-      height: 48px;
-      width: 48px;
+    height: 48px;
+    width: 48px;
   }
 
   .student_metrics .stat_name {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 576px) {
-  .about_background {
-      margin-top: -100px;
-      height: 100vh;
-  }
-
-  .overlay_text {
-      width: 80%;
-  }
-
-  .overlay_text h1 {
-    font-size: 28px;
-}
-
-.overlay_text p {
-    font-size: 14px;
-}
-
   .student_metrics {
-      padding: 20px 10px;
+    padding: 20px 10px;
+  }
+
+  .metrics {
+    max-width: 100%;
+    padding: 15px;
   }
 
   .student_metrics h1 {
-      font-size: 32px;
-  }
-
-  .student_metrics .metrics {
-      margin-bottom: 15px;
+    font-size: 32px;
   }
 
   .student_metrics img {
-      height: 40px;
-      width: 40px;
+    height: 40px;
+    width: 40px;
   }
 
   .student_metrics .stat_name {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 400px) {
   .student_metrics {
-      padding: 15px 5px;
+    padding: 15px 5px;
+  }
+
+  .metrics {
+    padding: 10px;
   }
 
   .student_metrics h1 {
-      font-size: 28px;
-  }
-
-  .student_metrics .metrics {
-      margin-bottom: 10px;
+    font-size: 28px;
   }
 
   .student_metrics img {
-      height: 36px;
-      width: 36px;
+    height: 36px;
+    width: 36px;
   }
 
   .student_metrics .stat_name {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
+
+/* Responsive Adjustments why choose */
+@media (max-width: 992px) {
+  .why-image {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .feature img.icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feature p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .feature img.icon {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+
+/* Responsive Styles contact us */
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    padding-top: 200px;
+  }
+
+  .contact-text-section {
+    font-size: 36px;
+    line-height: 40px;
+    padding: 50px 40px;
+  }
+
+  .contact-btn {
+    padding: 12px 8px;
+    max-width: 200px;
+  }
+
+  .contact-image {
+    width: 450px;
+    height: 330px;
+    padding-right: 80px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .contact-text-section {
+    font-size: 32px;
+    padding: 40px 30px;
+  }
+  .contact-text-section p{
+    font-size: 36px;
+  }
+
+  .contact-btn {
+    padding: 10px 6px;
+    max-width: 220px;
+  }
+
+  .contact-image {
+    width: 400px;
+    height: 280px;
+    padding-right: 70px;
+  }
+
+  /* Stack text and image sections on medium screens */
+  .contact-footerr .row {
+    flex-wrap: wrap;
+  }
+
+  .contact-footerr .col-md-6 {
+    flex: 0 0 100%; /* Full width on medium screens */
+    margin-bottom: 20px; /* Space between text and image */
+  }
+
+  .contact-footerr .contact-image {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding-top: 150px;
+  }
+
+  .contact-text-section {
+    font-size: 28px;
+    padding: 30px 20px;
+  }
+
+  .contact-text-section p{
+    font-size: 28px;
+  }
+
+  .contact-btn {
+    padding: 10px 5px;
+    max-width: 250px;
+  }
+  .contact-image {
+    display: none;
+  }
+}
+
+  /* Stack the contact sections vertically */
+  /*
+  .contact-footer .row {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-footer .col-md-6 {
+    flex: 0 0 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+*/
+
+
+@media (max-width: 576px) {
+  .contact-wrapper {
+    padding-top: 150px;
+  }
+
+  .contact-text-section {
+    font-size: 24px;
+    padding: 20px 15px;
+  }
+
+  .contact-btn {
+    padding: 10px 5px;
+    max-width: 100%;
+  }
+
+  .contact-image {
+    width: 320px;
+    height: 240px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-wrapper {
+    padding-top: 165px;
+  }
+
+  .contact-text-section {
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+
+  .contact-btn {
+    padding: 10px 5px;
+    max-width: 100%;
+  }
+
+  .contact-image {
+    width: 280px;
+    height: 200px;
+    padding-right: 40px;
+  }
+}
+
+
